@@ -116,6 +116,9 @@ line-height: 1.14;
 letter-spacing: 0.02em;
 color: var(--main-text-color);
 position: relative;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link.active::after {
@@ -155,6 +158,9 @@ margin-right: 50px;
 .header-contacts-icon{
 margin-right:10px ;
 fill: currentColor;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-mail:hover,
@@ -168,6 +174,9 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 color:var(--second-text-color);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-tel:hover,
 .header-tel:focus {
@@ -218,6 +227,9 @@ border-radius: 4px;
 margin: 0 auto;
 display: block;
 margin-top: 30px;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -403,6 +415,9 @@ color: var(--second-text-color)
     align-items: center;
     justify-content: center;
     color: #AFB1B8;
+    transition-property:color, background-color, border-radius;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-icon {
@@ -458,6 +473,9 @@ border-radius: 4px;
     justify-content: center;
     border-radius: 4px;
     color: #AFB1B8;
+    transition-property:border, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .regular-customers-link:hover,
@@ -472,9 +490,7 @@ border-radius: 4px;
 /* -----------------------FOOTER--------------------- */
 .footer{
     background-color: #2F303A;
-    flex-grow: 1;
-    padding: 60px 0 60px 160px;
-    height: 252px;
+    padding: 60px 0px 60px 0px;
 }
 .footer-container{
     display: flex;
@@ -508,11 +524,16 @@ font-size: 14px;
 line-height: 1.71;
 letter-spacing: 0.03em;
 color: #FFFFFF;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .address-link:hover,
 .address-link:focus {
 color: var(--accent-color);
 }
+
 .footer-mail{
 font-weight: 500;
 font-style: normal;
@@ -523,7 +544,11 @@ display: block;
 line-height: 1.14;
 letter-spacing: 0.02em;
 color: rgba(255, 255, 255, 0.6);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .footer-mail:hover,
 .footer-mail:focus {
 color: var(--accent-color);
@@ -536,7 +561,11 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 color: rgba(255, 255, 255, 0.6);
+    transition-property:color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .footer-tel:hover,
 .footer-tel:focus {
 color: var(--accent-color);
@@ -578,6 +607,10 @@ margin-bottom: 20px;
     align-items: center;
     justify-content: center;
     color: #ffffff;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .follow-us-icon {
@@ -586,5 +619,52 @@ margin-bottom: 20px;
 
 .follow-us-link:hover,
 .follow-us-link:focus {
-    background-color: #2196F3
+    background-color: var(--accent-color);
+}
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    transition: opacity 1000ms, visibility 1000ms;
+}
+
+.backdrop.is-hidden .modal {
+    transform: scale(1.5);
+    transition: transform 1000ms;
+}
+
+.modal {
+width: 528px;
+min-height: 581px;
+background-color: #FFFFFF;
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: scale(1);
+transform: translate(-50%, -50%);
+transition: transform 1000ms;
+}
+
+.modal-close {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
